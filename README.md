@@ -7,7 +7,10 @@ How to run
 
 1. Clone this repo
 2. Run bundle install
-3. Run `ruby app.rb` and visit `http://localhost:4567/`
+3. Connect to `psql`
+4. Create the database using the `psql` command `CREATE DATABASE bookmark_manager;`
+5. Connect to the database in `psql` and run the SQL scripts `01_create_bookmarks_table.sql` in the `db/migrations`
+6. Run `ruby app.rb` and visit `http://localhost:4567/`
 
 
 
