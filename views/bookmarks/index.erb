@@ -4,6 +4,6 @@
 
 <h3><ul>
   <% @bookmarks.each do |bookmark| %>
-    <li><%= bookmark %></li>
+    <li><%= bookmark['url'] %></li>
   <% end %>
 </ul></h3>
