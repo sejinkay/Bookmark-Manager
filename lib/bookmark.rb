@@ -3,12 +3,13 @@ require 'pg'
 class Bookmark
 
   def self.all
-    connection = PG.connect :dbname => 'bookmark_manager', :user => 'student'
+    if ENV['RACK_ENV'] = 'test'
+    connection = PG.connect :dbname => 'bookmark_manager_test'
+  else
+    connection = PG.connect :dbname => 'bookmark_manager'
+  end
+  
     result = connection.exec "SELECT * FROM bookmarks"
-    # [
-    #   "https://www.google.co.uk/",
-    #   "http://www.sanger.dk/",
-    #   "https://makers.tech/"
-    # ]
+    result.field_values('url')
   end
 end
