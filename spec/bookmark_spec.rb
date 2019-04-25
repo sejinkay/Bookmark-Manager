@@ -20,7 +20,6 @@ end
 describe Bookmark do
   describe '.add_bookmark' do
     it 'adds a new bookmark' do
-      connection = PG.connect :dbname => 'bookmark_manager_test'
 
       Bookmark.add_bookmark("https://www.google.co.uk/")
       Bookmark.add_bookmark("http://www.sanger.dk/")
